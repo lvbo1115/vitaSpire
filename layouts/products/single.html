@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="pa3 pa5-ns">
+  <nav class="pb3 mb4 bb b--light-gray">
+    <a href="/products/" class="f6 link dim br1 ph3 pv2 mb2 dib gray bg-light-gray hover-bg-light-silver">
+      ← Back to Products
+    </a>
+  </nav>
+  
+  <article class="bg-white br3 pa4 pa5-l ba b--black-10 shadow-5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      {{ if .Params.image }}
+      <div class="mb4 mb0-l">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db br3">
+      </div>
+      {{ end }}
+      
+      <div>
+        <h1 class="f2 f1-l mb2">{{ .Title }}</h1>
+        
+        {{ if .Params.price }}
+        <p class="f3 fw6 green mb3">{{ .Params.price }}</p>
+        {{ end }}
+        
+        <p class="f5 f4-l lh-copy mb4">{{ .Description }}</p>
+        
+        {{ if .Params.category }}
+        <div class="mb4">
+          <span class="f6 gray dib mr2">Category:</span>
+          <span class="f6 b">{{ .Params.category | title }}</span>
+        </div>
+        {{ end }}
+        
+        {{ if .Params.date }}
+        <div class="mb4">
+          <span class="f6 gray dib mr2">Added:</span>
+          <span class="f6">{{ .Params.date.Format "January 2, 2006" }}</span>
+        </div>
+        {{ end }}
+        
+        <div class="mb4">
+          <button class="f6 link dim br1 ph4 pv3 mb2 dib white bg-dark-blue hover-bg-blue">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt5">
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </article>
+</div>
+{{ end }}

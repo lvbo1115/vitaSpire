@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home &amp; Garden on Product Showcasesssssssssss</title>
+    <link>http://localhost:1313/products/home-garden/</link>
+    <description>Recent content in Home &amp; Garden on Product Showcasesssssssssss</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/products/home-garden/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smart LED Lamp</title>
+      <link>http://localhost:1313/products/home-garden/smart-lamp/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/home-garden/smart-lamp/</guid>
+      <description>&lt;h1 id=&#34;smart-led-lamp&#34;&gt;Smart LED Lamp&lt;/h1&gt;&#xA;&lt;p&gt;Illuminate your space with our intelligent LED lamp that combines style, functionality, and smart technology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Voice control compatible&lt;/li&gt;&#xA;&lt;li&gt;Adjustable brightness and color temperature&lt;/li&gt;&#xA;&lt;li&gt;Timer and scheduling functions&lt;/li&gt;&#xA;&lt;li&gt;Energy efficient LED technology&lt;/li&gt;&#xA;&lt;li&gt;Modern minimalist design&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Power: 10W LED&lt;/li&gt;&#xA;&lt;li&gt;Color temperature: 2700K-6500K&lt;/li&gt;&#xA;&lt;li&gt;Brightness: 10-100% dimmable&lt;/li&gt;&#xA;&lt;li&gt;Connectivity: Wi-Fi, Bluetooth&lt;/li&gt;&#xA;&lt;li&gt;Lifespan: 25,000 hours&lt;/li&gt;&#xA;&lt;li&gt;Control: Voice commands, mobile app&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

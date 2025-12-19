@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to Product Showcase on Product Showcasesssssssssss</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome to Product Showcase on Product Showcasesssssssssss</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Premium Yoga Mat</title>
+      <link>http://localhost:1313/products/sports/yoga-mat/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/sports/yoga-mat/</guid>
+      <description>&lt;h1 id=&#34;premium-yoga-mat&#34;&gt;Premium Yoga Mat&lt;/h1&gt;&#xA;&lt;p&gt;Enhance your yoga practice with our premium, eco-friendly yoga mat designed for comfort and stability.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Non-slip surface&lt;/li&gt;&#xA;&lt;li&gt;Extra thick cushioning (6mm)&lt;/li&gt;&#xA;&lt;li&gt;Eco-friendly materials&lt;/li&gt;&#xA;&lt;li&gt;Lightweight and portable&lt;/li&gt;&#xA;&lt;li&gt;Easy to clean&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dimensions: 183cm x 61cm x 6mm&lt;/li&gt;&#xA;&lt;li&gt;Material: TPE (Thermoplastic Elastomer)&lt;/li&gt;&#xA;&lt;li&gt;Weight: 1.2kg&lt;/li&gt;&#xA;&lt;li&gt;Colors: Blue, Purple, Green, Pink&lt;/li&gt;&#xA;&lt;li&gt;Care: Wipe clean with damp cloth&lt;/li&gt;&#xA;&lt;li&gt;Suitable for all yoga levels&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Smart LED Lamp</title>
+      <link>http://localhost:1313/products/home-garden/smart-lamp/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/home-garden/smart-lamp/</guid>
+      <description>&lt;h1 id=&#34;smart-led-lamp&#34;&gt;Smart LED Lamp&lt;/h1&gt;&#xA;&lt;p&gt;Illuminate your space with our intelligent LED lamp that combines style, functionality, and smart technology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Voice control compatible&lt;/li&gt;&#xA;&lt;li&gt;Adjustable brightness and color temperature&lt;/li&gt;&#xA;&lt;li&gt;Timer and scheduling functions&lt;/li&gt;&#xA;&lt;li&gt;Energy efficient LED technology&lt;/li&gt;&#xA;&lt;li&gt;Modern minimalist design&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Power: 10W LED&lt;/li&gt;&#xA;&lt;li&gt;Color temperature: 2700K-6500K&lt;/li&gt;&#xA;&lt;li&gt;Brightness: 10-100% dimmable&lt;/li&gt;&#xA;&lt;li&gt;Connectivity: Wi-Fi, Bluetooth&lt;/li&gt;&#xA;&lt;li&gt;Lifespan: 25,000 hours&lt;/li&gt;&#xA;&lt;li&gt;Control: Voice commands, mobile app&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>UltraBook Pro</title>
+      <link>http://localhost:1313/products/electronics/laptop/</link>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/electronics/laptop/</guid>
+      <description>&lt;h1 id=&#34;ultrabook-pro&#34;&gt;UltraBook Pro&lt;/h1&gt;&#xA;&lt;p&gt;Power through your workday with our premium ultrabook designed for professionals who demand the best.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;14-inch 4K display&lt;/li&gt;&#xA;&lt;li&gt;Intel Core i7 processor&lt;/li&gt;&#xA;&lt;li&gt;16GB RAM&lt;/li&gt;&#xA;&lt;li&gt;512GB SSD storage&lt;/li&gt;&#xA;&lt;li&gt;Backlit keyboard&lt;/li&gt;&#xA;&lt;li&gt;All-day battery life&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Processor: Intel Core i7-12th Gen&lt;/li&gt;&#xA;&lt;li&gt;RAM: 16GB DDR5&lt;/li&gt;&#xA;&lt;li&gt;Storage: 512GB NVMe SSD&lt;/li&gt;&#xA;&lt;li&gt;Display: 14-inch 4K touchscreen&lt;/li&gt;&#xA;&lt;li&gt;Graphics: Integrated Iris Xe&lt;/li&gt;&#xA;&lt;li&gt;Weight: 2.8 lbs&lt;/li&gt;&#xA;&lt;li&gt;Battery: Up to 12 hours&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Designer Jacket</title>
+      <link>http://localhost:1313/products/clothing/designer-jacket/</link>
+      <pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/clothing/designer-jacket/</guid>
+      <description>&lt;h1 id=&#34;designer-jacket&#34;&gt;Designer Jacket&lt;/h1&gt;&#xA;&lt;p&gt;Stay stylish and comfortable with our premium designer jacket, perfect for any season and occasion.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Water-resistant fabric&lt;/li&gt;&#xA;&lt;li&gt;Breathable lining&lt;/li&gt;&#xA;&lt;li&gt;Multiple pockets&lt;/li&gt;&#xA;&lt;li&gt;Adjustable cuffs and hem&lt;/li&gt;&#xA;&lt;li&gt;Premium zipper&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;materials--care&#34;&gt;Materials &amp;amp; Care&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Outer: 65% Polyester, 35% Cotton&lt;/li&gt;&#xA;&lt;li&gt;Lining: 100% Polyester&lt;/li&gt;&#xA;&lt;li&gt;Machine washable&lt;/li&gt;&#xA;&lt;li&gt;Available in sizes S-XXL&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Smartphone Pro Max</title>
+      <link>http://localhost:1313/products/electronics/smartphone/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/electronics/smartphone/</guid>
+      <description>&lt;h1 id=&#34;smartphone-pro-max&#34;&gt;Smartphone Pro Max&lt;/h1&gt;&#xA;&lt;p&gt;Experience the future of mobile technology with our flagship smartphone featuring cutting-edge performance and stunning design.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;6.7-inch OLED display&lt;/li&gt;&#xA;&lt;li&gt;5G connectivity&lt;/li&gt;&#xA;&lt;li&gt;Triple camera system&lt;/li&gt;&#xA;&lt;li&gt;All-day battery life&lt;/li&gt;&#xA;&lt;li&gt;Water and dust resistant&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Processor: Latest Snapdragon chip&lt;/li&gt;&#xA;&lt;li&gt;RAM: 12GB&lt;/li&gt;&#xA;&lt;li&gt;Storage: 256GB&lt;/li&gt;&#xA;&lt;li&gt;Camera: 108MP main, 12MP ultra-wide, 12MP telephoto&lt;/li&gt;&#xA;&lt;li&gt;Battery: 5000mAh&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,102 @@
+{{ $slides := slice "/images/image1.png" "/images/image2.png" "/images/gohugo-default-sample-hero-image.jpg" }}
+{{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
+
+<header class="{{ $featured_image_class }} relative overflow-hidden" style="height: auto;">
+  <!-- 轮播图片容器 -->
+  <div class="carousel-slides relative w-100" style="height: 70vh;" id="carouselSlides">
+    {{ range $index, $slide := $slides }}
+    <div class="carousel-slide absolute top-0 left-0 w-100 {{ if eq $index 0 }}active{{ end }}" style="background-image: url('{{ $slide }}'); height: 70vh;">
+    </div>
+    {{ end }}
+  </div>
+  
+  <!-- 轮播指示器 -->
+  <div class="carousel-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-999">
+    {{ range $index, $slide := $slides }}
+    <button class="w-3 h-3 rounded-full bg-white-50 hover-bg-white-80 {{ if eq $index 0 }}bg-white{{ end }}" onclick="goToSlide({{ $index }})" data-slide="{{ $index }}"></button>
+    {{ end }}
+  </div>
+  
+  <!-- 导航菜单 -->
+  {{ partials.Include "site-navigation.html" . }}
+</header>
+
+<style>
+.carousel-slides {
+  position: relative;
+}
+
+.carousel-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-indicators button {
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: white;
+}
+
+.carousel-prev,
+.carousel-next {
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+</style>
+
+<script>
+let currentSlide = 0;
+const totalSlides = 3;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const indicators = document.querySelectorAll('.carousel-indicators button');
+  
+  if (index >= totalSlides) currentSlide = 0;
+  else if (index < 0) currentSlide = totalSlides - 1;
+  else currentSlide = index;
+  
+  slides.forEach(function(slide, i) {
+    if (i === currentSlide) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+  
+  indicators.forEach(function(indicator, i) {
+    if (i === currentSlide) {
+      indicator.classList.add('bg-white');
+      indicator.classList.remove('bg-white-50');
+    } else {
+      indicator.classList.remove('bg-white');
+      indicator.classList.add('bg-white-50');
+    }
+  });
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+function goToSlide(index) {
+  showSlide(index);
+}
+
+setInterval(function() {
+  changeSlide(1);
+}, 5000);
+
+document.addEventListener('DOMContentLoaded', function() {
+  showSlide(0);
+});
+</script>
