@@ -1,6 +1,6 @@
 # Product Showcase Website
 
-A Hugo-based website to showcase products across 4 main categories: Electronics, Clothing, Home & Garden, and Sports & Fitness.
+A Hugo-based website to showcase products across 3 main categories: Electronics, Clothing, and Sports & Fitness.
 
 ## Structure
 

@@ -5,13 +5,13 @@
     <p class="f4 f3-l fw3 mid-gray lh-copy measure center">{{ .Description }}</p>
   </header>
   
-  <div class="content">
+  <!-- <div class="content">
     {{ .Content }}
-  </div>
+  </div> -->
   
   <!-- Product Categories List -->
   <section class="mt5">
-    <h2 class="f3 f2-l tc mb4">Shop by Category</h2>
+    <h2 class="f3 f2-l tc mb4">Category</h2>
     
     <!-- Electronics Category -->
     <article class="flex flex-row items-center justify-between bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all mb4">
@@ -33,7 +33,7 @@
         <a href="/products/electronics/" class="link dim">
           <div class="w-32 h-32 bg-blue br3 flex items-center justify-center hover-bg-light-blue transition-all">
             <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2h10c1.1 0 2-.9 2-2V5h-2v2H7V5H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2h2v2H7c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h10zm-2 2V7h-2v4h2V9zm-4 0V7h-2v2h2V9z"/>
+              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2h10c1.1 0 2-.9 2-2V5h-2v2H7V5H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2h2v2H7c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h10zm-2 2V7h-2v4h2V9zm-4 0V7h-2v2h2V9z"/>
             </svg>
           </div>
         </a>
@@ -61,33 +61,6 @@
           <div class="w-32 h-32 bg-green br3 flex items-center justify-center hover-bg-light-green transition-all">
             <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 2v11h3v9l7-5.84V2H7zm10 0v6.09L12.5 8 8 8.09V2h9v16h-9v-6.09zM2 13v2h2v-2H2zm0 4h2v2h2v-2H4v-2h2v-2H2v2zm0-8h2v2H2V9zm4 0v2h2V9H6zm0 4h2v2h2v-2H8v-2h2v-2H6v2zm12 0h2v2h2v-2h-2v-2h2v-2h-2v2zm4 0h2v2h2v-2h-2v-2h2v-2h-2v2z"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </article>
-    
-    <!-- Home & Garden Category -->
-    <article class="flex flex-row items-center justify-between bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all mb4">
-      <div class="w-60 pr4">
-        <h3 class="f3 f2-l mb3 purple">
-          <a href="/products/home-garden/" class="link dim purple">
-            Home & Garden
-          </a>
-        </h3>
-        <p class="f5 f4-l lh-copy mb3">Everything you need to beautify your home and garden. Transform your living space.</p>
-        <div class="flex items-center">
-          <span class="f6 gray mr2">{{ len (where site.RegularPages "Section" "products/home-garden") }} products</span>
-          <a href="/products/home-garden/" class="f6 link dim br1 ph3 pv2 dib white bg-purple hover-bg-dark-purple">
-            Browse →
-          </a>
-        </div>
-      </div>
-      <div class="w-40 pl4 flex items-center justify-center">
-        <a href="/products/home-garden/" class="link dim">
-          <div class="w-32 h-32 bg-purple br3 flex items-center justify-center hover-bg-light-purple transition-all">
-            <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
             </svg>
           </div>
         </a>

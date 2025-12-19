@@ -11,7 +11,6 @@ Browse our complete collection of premium products across all categories. Find e
 
 - [Electronics](/products/electronics/) - Latest technology and gadgets
 - [Clothing](/products/clothing/) - Stylish apparel for all occasions
-- [Home & Garden](/products/home-garden/) - Items to beautify your living space
 - [Sports & Fitness](/products/sports/) - Equipment for your active lifestyle
 
 ## Quick Links

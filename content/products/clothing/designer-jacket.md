@@ -2,7 +2,7 @@
 title: "Designer Jacket"
 description: "Premium quality jacket for all seasons"
 price: "$299"
-image: "/images/jacket.jpg"
+image: "/images/image1.jpg"
 category: "clothing"
 date: 2024-01-18
 ---
