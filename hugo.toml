@@ -4,8 +4,13 @@ title = 'VitaSpire'
 theme = 'ananke'
 
 [params]
-  description = ""
-  author = "Your Company"
+  description = "VitaSpire"
+  author = "VitaSpire"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 5
 
 [[menu.main]]
   name = "About Us"

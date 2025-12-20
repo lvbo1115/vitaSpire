@@ -97,11 +97,11 @@ Add product images to the `static/images/` folder and reference them in the prod
 
 ## Features
 
-- ✅ Homepage with 4 product category sections
+- ✅ Homepage with 3 product category sections
 - ✅ Product category listing pages
 - ✅ Individual product detail pages
 - ✅ Responsive design (mobile-friendly)
-- ✅ Featured products section
+- ✅ Key Products section
 - ✅ Clean, modern interface
 - ✅ Easy product management through markdown files
 
