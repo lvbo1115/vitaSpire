@@ -1,4 +1,4 @@
-baseURL = 'https://lvbo1115.github.io/vitaSpire/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'VitaSpire'
 theme = 'ananke'
