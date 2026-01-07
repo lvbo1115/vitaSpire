@@ -10,7 +10,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       {{ if .Params.image }}
       <div class="mb4 mb0-l">
-        <img src="{{ absURL .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db br3">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db br3">
       </div>
       {{ end }}
       
