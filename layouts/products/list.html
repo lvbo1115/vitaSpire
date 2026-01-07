@@ -8,7 +8,7 @@
     <article class="bg-white br3 pa3 ba b--black-10 shadow-5">
       {{ if .Params.image }}
       <div class="mb3">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db">
+        <img src="{{ relURL .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db">
       </div>
       {{ end }}
       

@@ -1,4 +1,4 @@
-{{ $slides := slice "/images/image1.png" "/images/image2.png" "/images/gohugo-default-sample-hero-image.jpg" }}
+{{ $slides := slice (relURL "/images/image1.png") (relURL "/images/image2.png") (relURL "/images/gohugo-default-sample-hero-image.jpg") }}
 {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
 
 <header class="{{ $featured_image_class }} relative overflow-hidden" style="height: auto;">
@@ -6,7 +6,7 @@
   <nav class="pv3 ph3 ph4-ns bg-white relative z-10" role="navigation">
     <div class="flex-l center items-center justify-between">
       <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center no-underline">
-        <img src="/images/image2.png" alt="Logo" class="h3 w3 mr3" />
+        <img src="{{ relURL "/images/image2.png" }}" alt="Logo" class="h3 w3 mr3" />
         <span class="black-90 f2 fw7 font-display">{{ .Site.Title }}</span>
       </a>
       <div class="flex-l items-center">
