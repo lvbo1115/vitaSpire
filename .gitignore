@@ -1,0 +1,15 @@
+# Generated files by Hugo
+/public/
+.resources/
+
+# Temporary files
+.DS_Store
+*.swp
+*~
+
+# IDE files
+.vscode/
+.idea/
+
+# Build artifacts
+hugo.lock
