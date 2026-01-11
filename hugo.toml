@@ -18,11 +18,21 @@ theme = 'ananke'
   weight = 10
 
 [[menu.main]]
-  name = "Products"
-  url = "/products/"
+  name = "Biomedical & Health Materials"
+  url = "/products/biomedical-health-materials/"
   weight = 20
+
+[[menu.main]]
+  name = "Human Nutrition Solutions"
+  url = "/products/human-nutrition-solutions/"
+  weight = 25
+
+[[menu.main]]
+  name = "Advanced Industrial Materials"
+  url = "/products/advanced-industrial-materials/"
+  weight = 30
 
 [[menu.main]]
   name = "Contact Us"
   url = "/contact/"
-  weight = 30
+  weight = 35
