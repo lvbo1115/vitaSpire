@@ -58,6 +58,28 @@
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}">
+    <!-- Global Navigation -->
+    <nav class="pv3 ph3 ph4-ns bg-white" role="navigation">
+      <div class="flex-l center items-center justify-between">
+        <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center no-underline">
+          <img src="/images/image2.png" alt="Logo" class="h3 w3 mr3" />
+          <span class="black-90 f2 fw7 font-display">{{ .Site.Title }}</span>
+        </a>
+        <div class="flex-l items-center">
+          {{ if .Site.Menus.main }}
+            <ul class="pl0 mr3">
+              {{ range .Site.Menus.main }}
+                <li class="list f5 f4-ns fw4 dib pr3">
+                  <a class="hover-black black-90 no-underline" href="{{ .URL }}" title="{{ .Name }}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
+      </div>
+    </nav>
 
     {{ block "header" . }}
       {{ if eq .Kind "home" }}

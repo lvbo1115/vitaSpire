@@ -1,6 +1,7 @@
 ---
 title: "Advanced Industrial Materials"
 description: "High-performance materials for industrial applications"
+featured_image: "/images/advanced-industrial-materials.jpg"
 ---
 
 # Advanced Industrial Materials

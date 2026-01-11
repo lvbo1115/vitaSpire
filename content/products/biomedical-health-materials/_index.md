@@ -1,6 +1,7 @@
 ---
 title: "Biomedical & Health Materials"
 description: "Advanced materials for biomedical and health applications"
+featured_image: "/images/biomedical-health-materials.jpg"
 ---
 
 # Biomedical & Health Materials
