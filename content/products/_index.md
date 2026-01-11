@@ -9,9 +9,9 @@ Browse our complete collection of premium products across all categories. Find e
 
 ## Categories
 
-- [Electronics](/products/electronics/) - Latest technology and gadgets
-- [Clothing](/products/clothing/) - Stylish apparel for all occasions
-- [Sports & Fitness](/products/sports/) - Equipment for your active lifestyle
+- [Biomedical & Health Materials](/products/biomedical-health-materials/) - Advanced materials for biomedical and health applications
+- [Human Nutrition Solutions](/products/human-nutrition-solutions/) - Innovative solutions for human nutrition and wellness
+- [Advanced Industrial Materials](/products/advanced-industrial-materials/) - High-performance materials for industrial applications
 
 ## Quick Links
 

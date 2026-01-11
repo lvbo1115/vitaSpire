@@ -1,6 +1,6 @@
 # Product Showcase Website
 
-A Hugo-based website to showcase products across 3 main categories: Electronics, Clothing, and Sports & Fitness.
+A Hugo-based website to showcase products across 3 main categories: Biomedical & Health Materials, Human Nutrition Solutions, and Advanced Industrial Materials.
 
 ## Structure
 
@@ -10,18 +10,15 @@ content/
 ├── _index.md                    # Homepage content
 ├── products/
 │   ├── _index.md               # Main products page
-│   ├── electronics/
-│   │   ├── _index.md          # Electronics category page
+│   ├── biomedical-health-materials/
+│   │   ├── _index.md          # Biomedical & Health Materials category page
+│   │   └── designer-jacket.md # Sample product
+│   ├── human-nutrition-solutions/
+│   │   ├── _index.md          # Human Nutrition Solutions category page
 │   │   ├── smartphone.md      # Sample product
 │   │   └── laptop.md          # Sample product
-│   ├── clothing/
-│   │   ├── _index.md          # Clothing category page
-│   │   └── designer-jacket.md # Sample product
-│   ├── home-garden/
-│   │   ├── _index.md          # Home & Garden category page
-│   │   └── smart-lamp.md      # Sample product
-│   └── sports/
-│       ├── _index.md          # Sports & Fitness category page
+│   └── advanced-industrial-materials/
+│       ├── _index.md          # Advanced Industrial Materials category page
 │       └── yoga-mat.md        # Sample product
 ```
 
@@ -38,7 +35,7 @@ layouts/
 
 To add a new product:
 
-1. Create a new markdown file in the appropriate category folder (e.g., `content/products/electronics/new-product.md`)
+1. Create a new markdown file in the appropriate category folder (e.g., `content/products/human-nutrition-solutions/new-product.md`)
 2. Add front matter with product details:
 ```yaml
 ---
@@ -46,7 +43,7 @@ title: "Product Name"
 description: "Product description"
 price: "$99"
 image: "/images/product-image.jpg"
-category: "electronics"
+category: "human-nutrition-solutions"
 date: 2024-01-15
 ---
 ```
