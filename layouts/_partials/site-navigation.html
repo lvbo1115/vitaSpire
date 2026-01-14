@@ -1,19 +1,49 @@
-<nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
-    <div class="flex-l items-center">
-      {{ partials.Include "i18nlist.html" . }}
-      {{ if .Site.Menus.main }}
-        <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
+<!-- layouts/partials/site-navigation.html -->
+<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+          <i class="fas fa-atom text-white text-xl"></i>
+        </div>
+        <a href="{{ .Site.Home.RelPermalink }}" class="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent no-underline">
+          {{ .Site.Title }}
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-center space-x-1">
           {{ range .Site.Menus.main }}
-            <li class="list f5 f4-ns fw4 dib {{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
-              <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
-                {{ .Name }}
-              </a>
-            </li>
+            <a href="{{ .URL }}" class="nav-link text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium no-underline">
+              {{ .Name }}
+            </a>
           {{ end }}
-        </ul>
-      {{ end }}
-      {{ partials.IncludeCached "social/follow.html" . }}
+        </div>
+      </div>
+      <div class="md:hidden">
+        <button class="text-gray-700 hover:text-indigo-600 p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
+
+<style>
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+</style>

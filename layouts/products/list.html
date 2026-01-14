@@ -1,54 +1,144 @@
 {{ define "main" }}
-<div class="pa3 pa5-ns">
-  <h1 class="f2 f1-l mb2">{{ .Title }}</h1>
-  <p class="f4 fw3 mid-gray mb4">{{ .Description }}</p>
+{{/* === 安全获取路径（防止 .File 为 nil）=== */}}
+{{ $path := "" }}
+{{ with .File }}
+  {{ $path = .Dir | strings.TrimSuffix "/" }}
+{{ end }}
 
-  {{ if .Sections }}
-    <!-- List subcategories -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {{ range .Sections }}
-      <article class="bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all">
-        <h2 class="f3 f2-l mb3">
-          <a href="{{ .RelPermalink }}" class="link dim black-90">
-            {{ .Title }}
-          </a>
-        </h2>
-        <p class="f5 f4-l lh-copy mb3">{{ .Description }}</p>
-        <a href="{{ .RelPermalink }}" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue">
-          View Products →
-        </a>
-      </article>
-      {{ end }}
-    </div>
+{{ $parts := split $path "/" }}
+{{ $isTopLevel := and (ne $path "") (eq (len $parts) 1) }}
+
+{{/* 颜色映射：仅大类有专属颜色 */}}
+{{ $colorMap := dict
+  "biomedical-health-materials" "indigo"
+  "human-nutrition-solutions" "emerald"
+  "advanced-industrial-materials" "red"
+}}
+{{ $color := "gray" }}
+
+{{ if $isTopLevel }}
+  {{ $slug := index $parts 0 }}
+  {{ if isset $colorMap $slug }}
+    {{ $color = index $colorMap $slug }}
+  {{ end }}
+{{ else if gt (len $parts) 1 }}
+  {{ $parentSlug := index $parts 0 }}
+  {{ if isset $colorMap $parentSlug }}
+    {{ $color = index $colorMap $parentSlug }}
+  {{ end }}
+{{ end }}
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <!-- Header -->
+  <div class="text-center mb-16">
+    <h1 class="hero-title text-4xl md:text-5xl font-bold mb-6">
+      {{ .Title }}
+    </h1>
+    {{ with .Description }}
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ . }}</p>
+    {{ else }}
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        {{ if $isTopLevel }}
+          Explore our sub-categories.
+        {{ else }}
+          Browse all products in this category.
+        {{ end }}
+      </p>
+    {{ end }}
+  </div>
+
+  <!-- 内容区：根据是否有子页面自动切换 -->
+  {{ if .Pages }}
+    {{ if $isTopLevel }}
+      <!-- 大类页：显示小类卡片 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+          <div class="product-card group">
+            <div class="relative overflow-hidden">
+              {{ $image := "/images/placeholder.jpg" }}
+              {{ with .File }}
+                {{ $imgPath := printf "/images/%s.jpg" (.Dir | strings.TrimSuffix "/") }}
+                {{ $image = $imgPath }}
+              {{ end }}
+              <img src="{{ $image }}" alt="{{ .Title }}" class="product-image w-full">
+              <div class="gradient-overlay bg-gradient-to-t from-{{ $color }}-600 to-{{ 
+                if eq $color "indigo" }}purple
+                {{ else if eq $color "emerald" }}teal
+                {{ else if eq $color "red" }}orange
+                {{ else }}gray{{ end }}-600"></div>
+              <div class="absolute top-6 left-6">
+                <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+                  {{ .Title | truncate 12 }}
+                </span>
+              </div>
+              <div class="absolute bottom-6 left-6 text-white">
+                <h3 class="text-xl font-bold mb-1">{{ .Title }}</h3>
+                <p class="text-white/90">{{ len .Pages }} products</p>
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <p class="text-gray-600 mb-6">Browse this sub-category.</p>
+              <a href="{{ .RelPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
+                Explore
+                <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    {{ else }}
+      <!-- 小类页：显示产品卡片 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+          <div class="product-card group">
+            <div class="relative overflow-hidden">
+              {{ $image := .Params.image | default (printf "/images/%s.jpg" $path) }}
+              <img src="{{ $image }}" alt="{{ .Title }}" class="product-image w-full">
+              <div class="gradient-overlay bg-gradient-to-t from-{{ $color }}-600 to-{{ 
+                if eq $color "indigo" }}purple
+                {{ else if eq $color "emerald" }}teal
+                {{ else if eq $color "red" }}orange
+                {{ else }}gray{{ end }}-600"></div>
+              <div class="absolute top-6 left-6">
+                <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+                  {{ .Title | truncate 12 }}
+                </span>
+              </div>
+              <div class="absolute bottom-6 left-6 text-white">
+                <h3 class="text-xl font-bold mb-1">{{ .Title }}</h3>
+                {{ with .Params.price }}
+                  <p class="text-white/90">{{ . }}</p>
+                {{ end }}
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <p class="text-gray-600 mb-6">{{ .Description | truncate 120 }}</p>
+              <a href="{{ .RelPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
+                View Details
+                <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
   {{ else }}
-    <!-- List products -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {{ range .Pages }}
-      <article class="bg-white br3 pa3 ba b--black-10 shadow-5">
-        {{ if .Params.image }}
-        <div class="mb3">
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db">
-        </div>
-        {{ end }}
-
-        <h2 class="f3 f2-l mb2">
-          <a href="{{ .RelPermalink }}" class="link dim black-90">
-            {{ .Title }}
-          </a>
-        </h2>
-
-        {{ if .Params.price }}
-        <p class="f4 fw6 green mb2">{{ .Params.price }}</p>
-        {{ end }}
-
-        <p class="f6 f5-l lh-copy">{{ .Description }}</p>
-
-        <a href="{{ .RelPermalink }}" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue">
-          View Details →
-        </a>
-      </article>
-      {{ end }}
+    <div class="text-center py-12">
+      <p class="text-gray-600 text-lg">No content available yet.</p>
     </div>
   {{ end }}
+
+  <!-- 返回链接 -->
+  <div class="mt-12 text-center">
+    {{ if ne .Parent.RelPermalink "/" }}
+      <a href="{{ .Parent.RelPermalink }}" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">
+        ← Back to {{ .Parent.Title }}
+      </a>
+    {{ else }}
+      <a href="/products/" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">
+        ← Back to All Categories
+      </a>
+    {{ end }}
+  </div>
 </div>
 {{ end }}

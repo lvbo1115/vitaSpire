@@ -1,22 +1,19 @@
-{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 {{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
+  {{ $featured_image_class := site.Params.featured_image_class | default "cover bg-top" }}
   <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}'); height: 70vh;">
   </header>
 {{ else }}
-  <header>
-    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          {{ .Title | compare.Default .Site.Title }}
-        </h1>
-        {{ with .Params.description }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-            {{ . }}
-          </h2>
-        {{ end }}
-      </div>
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 hero-title">
+        {{ .Title | default .Site.Title }}
+      </h1>
+      {{ with .Params.description }}
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          {{ . }}
+        </p>
+      {{ end }}
     </div>
   </header>
 {{ end }}

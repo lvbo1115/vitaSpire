@@ -1,11 +1,62 @@
-<footer class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between items-center">
-    <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="{{ .Site.Home.Permalink }}" >
-      &copy; {{ with .Site.Copyright | compare.Default .Site.Title }} {{ . | safe.HTML }} {{ now.Format "2006"}} {{ end }}
-    </a>
-    <div class="tc white-70 f5">
-      <p>Phone: 123-456-7890 | Email: info@example.com</p>
+<!-- layouts/partials/site-footer.html -->
+<footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+            <i class="fas fa-atom text-white text-2xl"></i>
+          </div>
+          <h3 class="text-3xl font-bold">{{ .Site.Title }}</h3>
+        </div>
+        <p class="text-gray-300 mb-8 max-w-md leading-relaxed">
+          {{ .Site.Params.footerDescription | default "Pioneering innovation in materials science and health solutions." }}
+        </p>
+        <div class="flex space-x-6">
+          {{ range .Site.Params.social }}
+            <a href="{{ .url }}" class="footer-social text-gray-300 hover:text-white transition-colors">
+              <i class="fab fa-{{ .icon }} text-xl"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+        <ul class="space-y-3 text-gray-300">
+          {{ range .Site.Menus.footer }}
+            <li><a href="{{ .URL }}" class="hover:text-white transition-colors hover:translate-x-1">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">Contact Info</h4>
+        <div class="space-y-4 text-gray-300">
+          <div class="flex items-start">
+            <i class="fas fa-phone-alt mt-1 mr-3 text-indigo-400"></i>
+            <span>{{ .Site.Params.phone | default "123-456-7890" }}</span>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-envelope mt-1 mr-3 text-indigo-400"></i>
+            <span>{{ .Site.Params.email | default "info@example.com" }}</span>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-400"></i>
+            <span>{{ .Site.Params.address | default "123 Innovation Drive<br>Tech City, TC 12345" | safeHTML }}</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
+    <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+      <p>&copy; {{ now.Year }} {{ with .Site.Copyright | default .Site.Title }}{{ . | safeHTML }}{{ end }}. All rights reserved.</p>
+    </div>
   </div>
 </footer>
+
+<style>
+.footer-social {
+  transition: all 0.3s ease;
+}
+.footer-social:hover {
+  transform: translateY(-3px);
+}
+</style>

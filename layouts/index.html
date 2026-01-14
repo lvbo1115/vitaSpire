@@ -1,127 +1,107 @@
 {{ define "main" }}
-<div class="pa3 pa5-ns">
-  <!-- <div class="content">
-    {{ .Content }}
-  </div> -->
-  
-  <!-- Product Categories List -->
-  <section class="mt5">
-    <h2 class="f3 f2-l tc mb4">Category</h2>
-    
-    <!-- Human Nutrition Solutions Category -->
-    <article class="flex flex-row items-center justify-between bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all mb4">
-      <div class="w-60 pr4">
-        <h3 class="f3 f2-l mb3 blue">
-          <a href="/products/human-nutrition-solutions/" class="link dim blue">
-            Human Nutrition Solutions
-          </a>
-        </h3>
-        <p class="f5 f4-l lh-copy mb3">Innovative solutions for human nutrition and wellness. From supplements to advanced formulations, discover cutting-edge nutrition technology.</p>
-        <div class="flex items-center">
-          <span class="f6 gray mr2">{{ len (where site.RegularPages "Section" "products/human-nutrition-solutions") }} products</span>
-          <a href="/products/human-nutrition-solutions/" class="f6 link dim br1 ph3 pv2 dib white bg-blue hover-bg-dark-blue">
-            Browse →
-          </a>
-        </div>
-      </div>
-      <div class="w-40 pl4 flex items-center justify-center">
-        <a href="/products/human-nutrition-solutions/" class="link dim">
-          <div class="w-32 h-32 bg-blue br3 flex items-center justify-center hover-bg-light-blue transition-all">
-            <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2h10c1.1 0 2-.9 2-2V5h-2v2H7V5H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2H5v2h2v2h2v2H7c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h10zm-2 2V7h-2v4h2V9zm-4 0V7h-2v2h2V9z"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </article>
-    
-    <!-- Biomedical & Health Materials Category -->
-    <article class="flex flex-row items-center justify-between bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all mb4">
-      <div class="w-60 pr4">
-        <h3 class="f3 f2-l mb3 green">
-          <a href="/products/biomedical-health-materials/" class="link dim green">
-            Biomedical & Health Materials
-          </a>
-        </h3>
-        <p class="f5 f4-l lh-copy mb3">Advanced materials for biomedical and health applications. From implants to diagnostic tools, discover cutting-edge health technology.</p>
-        <div class="flex items-center">
-          <span class="f6 gray mr2">{{ len (where site.RegularPages "Section" "products/biomedical-health-materials") }} products</span>
-          <a href="/products/biomedical-health-materials/" class="f6 link dim br1 ph3 pv2 dib white bg-green hover-bg-dark-green">
-            Browse →
-          </a>
-        </div>
-      </div>
-      <div class="w-40 pl4 flex items-center justify-center">
-        <a href="/products/biomedical-health-materials/" class="link dim">
-          <div class="w-32 h-32 bg-green br3 flex items-center justify-center hover-bg-light-green transition-all">
-            <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7 2v11h3v9l7-5.84V2H7zm10 0v6.09L12.5 8 8 8.09V2h9v16h-9v-6.09zM2 13v2h2v-2H2zm0 4h2v2h2v-2H4v-2h2v-2H2v2zm0-8h2v2H2V9zm4 0v2h2V9H6zm0 4h2v2h2v-2H8v-2h2v-2H6v2zm12 0h2v2h2v-2h-2v-2h2v-2h-2v2zm4 0h2v2h2v-2h-2v-2h2v-2h-2v2z"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </article>
-    
-    <!-- Advanced Industrial Materials Category -->
-    <article class="flex flex-row items-center justify-between bg-white br3 pa4 ba b--black-10 shadow-5 hover-shadow-6 transition-all mb4">
-      <div class="w-60 pr4">
-        <h3 class="f3 f2-l mb3 red">
-          <a href="/products/advanced-industrial-materials/" class="link dim red">
-            Advanced Industrial Materials
-          </a>
-        </h3>
-        <p class="f5 f4-l lh-copy mb3">High-performance materials for industrial applications. From aerospace to manufacturing, discover cutting-edge industrial solutions.</p>
-        <div class="flex items-center">
-          <span class="f6 gray mr2">{{ len (where site.RegularPages "Section" "products/advanced-industrial-materials") }} products</span>
-          <a href="/products/advanced-industrial-materials/" class="f6 link dim br1 ph3 pv2 dib white bg-red hover-bg-dark-red">
-            Browse →
-          </a>
-        </div>
-      </div>
-      <div class="w-40 pl4 flex items-center justify-center">
-        <a href="/products/advanced-industrial-materials/" class="link dim">
-          <div class="w-32 h-32 bg-red br3 flex items-center justify-center hover-bg-light-red transition-all">
-            <svg class="w-16 h-16 white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.57 14.86L22 13.5 12 4 2 13.5 3.43 14.86l3.57 3.57L12 21.5l5.14-3.07L20.57 14.86zM12 4l1.5 1.5L12 7l-1.5-1.5L12 4zm0 7.5l1.5 1.5L12 14.5l-1.5-1.5L12 11.5z"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </article>
-    
-  </section>
-  
-  <!-- Key Products Section -->
-  <section class="mt6">
-    <h2 class="f3 f2-l tc mb4">Key Products</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {{ $products := where site.RegularPages "Section" "products" }}
-      {{ range first 3 $products }}
-      <article class="bg-white br3 pa3 ba b--black-10 shadow-5">
-        {{ if .Params.image }}
-        <div class="mb3">
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-100 h-auto db">
-        </div>
-        {{ end }}
-        
-        <h3 class="f4 f3-l mb2">
-          <a href="{{ .RelPermalink }}" class="link dim black-90">
-            {{ .Title }}
-          </a>
-        </h3>
-        
-        {{ if .Params.price }}
-        <p class="f5 fw6 green mb2">{{ .Params.price }}</p>
-        {{ end }}
-        
-        <p class="f6 f5-l lh-copy truncate">{{ .Description }}</p>
-        
-        <a href="{{ .RelPermalink }}" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue">
-          View Details →
-        </a>
-      </article>
-      {{ end }}
+<!-- Hero Section -->
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-20">
+  <!-- Main Title -->
+  <div class="text-center mb-16">
+    <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      Pioneering Innovation
+    </h1>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      Discover our cutting-edge solutions in biomedical materials, nutrition science, and advanced industrial applications
+    </p>
+  </div>
+
+  <!-- Carousel (uses your images) -->
+  {{ partial "site-header-carousel.html" . }}
+</div>
+
+<!-- Stats -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+      <div class="stat-number">{{ len (where site.RegularPages "Section" "products") }}</div>
+      <p class="text-gray-600 font-medium">Total Products</p>
     </div>
-  </section>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+      <div class="stat-number">50+</div>
+      <p class="text-gray-600 font-medium">Countries Served</p>
+    </div>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+      <div class="stat-number">200+</div>
+      <p class="text-gray-600 font-medium">Patents Filed</p>
+    </div>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+      <div class="stat-number">15+</div>
+      <p class="text-gray-600 font-medium">Years Experience</p>
+    </div>
+  </div>
+</div>
+
+<!-- Product Categories -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+  <div class="text-center mb-16">
+    <h2 class="section-title text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Product Categories</h2>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      Discover our innovative solutions across three specialized domains.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {{ $categories := slice
+      (dict "name" "Biomedical & Health Materials" "slug" "biomedical-health-materials" "color" "indigo")
+      (dict "name" "Human Nutrition Solutions" "slug" "human-nutrition-solutions" "color" "emerald")
+      (dict "name" "Advanced Industrial Materials" "slug" "advanced-industrial-materials" "color" "red")
+    }}
+    {{ range $cat := $categories }}
+      {{ $pages := where site.RegularPages "Section" (printf "products/%s" $cat.slug) }}
+      <div class="product-card group">
+        <div class="relative overflow-hidden">
+          <img src="/images/{{ $cat.slug }}.jpg" alt="{{ $cat.name }}" class="product-image w-full">
+          <div class="gradient-overlay bg-gradient-to-t from-{{ $cat.color }}-600 to-{{ if eq $cat.color "indigo" }}purple{{ else if eq $cat.color "emerald" }}teal{{ else }}orange{{ end }}-600"></div>
+          <div class="absolute top-6 left-6">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">{{ $cat.name | truncate 12 }}</span>
+          </div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">{{ $cat.name }}</h3>
+            <p class="text-white/90">{{ len $pages }} products available</p>
+          </div>
+        </div>
+        <div class="p-6 bg-white">
+          <p class="text-gray-600 mb-6">Click below to browse all products in this category.</p>
+          <a href="/products/{{ $cat.slug }}/" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
+            Explore Products
+            <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+<!-- Features -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="text-center p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div class="feature-icon bg-gradient-to-r from-indigo-600 to-purple-600 text-white mx-auto mb-4">
+        <i class="fas fa-flask text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-3">Research & Development</h3>
+      <p class="text-gray-600">State-of-the-art R&D facilities driving innovation.</p>
+    </div>
+    <div class="text-center p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div class="feature-icon bg-gradient-to-r from-emerald-600 to-teal-600 text-white mx-auto mb-4">
+        <i class="fas fa-certificate text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-3">Quality Assurance</h3>
+      <p class="text-gray-600">Rigorous quality control for safety and performance.</p>
+    </div>
+    <div class="text-center p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div class="feature-icon bg-gradient-to-r from-red-600 to-orange-600 text-white mx-auto mb-4">
+        <i class="fas fa-globe text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-3">Global Reach</h3>
+      <p class="text-gray-600">Serving customers in over 50 countries worldwide.</p>
+    </div>
+  </div>
 </div>
 {{ end }}
