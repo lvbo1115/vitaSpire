@@ -53,32 +53,45 @@
       <!-- 大类页：显示小类卡片 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ range .Pages }}
+          {{/* 提前保存当前页面数据 */}}
+          {{ $page := . }}
+          {{ $title := .Title }}
+          {{ $pageCount := len .Pages }}
+          {{ $description := .Description | default "Browse this sub-category." }}
+          {{ $relPermalink := .RelPermalink }}
+
+          {{/* 小类封面图逻辑 */}}
+          {{ $finalImage := "" }}
+          {{ with .File }}
+            {{ $slug := .Dir | strings.TrimSuffix "/" }}
+            {{ $imgPath := printf "/images/categories/%s.jpg" $slug }}
+            {{ if fileExists (printf "static%s" $imgPath) }}
+              {{ $finalImage = $imgPath }}
+            {{ end }}
+          {{ end }}
+
           <div class="product-card group">
             <div class="relative overflow-hidden">
-              {{ $image := "/images/placeholder.jpg" }}
-              {{ with .File }}
-                {{ $imgPath := printf "/images/%s.jpg" (.Dir | strings.TrimSuffix "/") }}
-                {{ $image = $imgPath }}
+              {{ if $finalImage }}
+                <img src="{{ $finalImage }}" alt="{{ $title }}" class="product-image w-full">
+              {{ else }}
+                <div class="bg-gray-100 w-full h-64 flex items-center justify-center p-4">
+                  <i class="fas fa-folder text-gray-400 text-5xl"></i>
+                </div>
               {{ end }}
-              <img src="{{ $image }}" alt="{{ .Title }}" class="product-image w-full">
               <div class="gradient-overlay bg-gradient-to-t from-{{ $color }}-600 to-{{ 
                 if eq $color "indigo" }}purple
                 {{ else if eq $color "emerald" }}teal
                 {{ else if eq $color "red" }}orange
                 {{ else }}gray{{ end }}-600"></div>
-              <div class="absolute top-6 left-6">
-                <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                  {{ .Title | truncate 12 }}
-                </span>
-              </div>
               <div class="absolute bottom-6 left-6 text-white">
-                <h3 class="text-xl font-bold mb-1">{{ .Title }}</h3>
-                <p class="text-white/90">{{ len .Pages }} products</p>
+                <h3 class="text-xl font-bold mb-1">{{ $title }}</h3>
+                <p class="text-white/90">{{ $pageCount }} items</p>
               </div>
             </div>
             <div class="p-6 bg-white">
-              <p class="text-gray-600 mb-6">Browse this sub-category.</p>
-              <a href="{{ .RelPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
+              <p class="text-gray-600 mb-6">{{ $description }}</p>
+              <a href="{{ $relPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
                 Explore
                 <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
               </a>
@@ -90,30 +103,56 @@
       <!-- 小类页：显示产品卡片 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ range .Pages }}
+          {{/* 提前保存当前页面数据 */}}
+          {{ $page := . }}
+          {{ $title := .Title }}
+          {{ $description := .Description | default "No description available." }}
+          {{ $relPermalink := .RelPermalink }}
+
+          {{/* 产品图片逻辑（安全访问 Params）*/}}
+          {{ $finalImage := "" }}
+          {{ with .File }}
+            {{ $relDir := .Dir | strings.TrimSuffix "/" }}
+            {{ $baseName := .BaseFileName }}
+            {{ $imgPath := printf "/images/products/%s/%s.jpg" $relDir $baseName }}
+            
+            {{/* 安全获取自定义图片路径 */}}
+            {{ $customImage := "" }}
+            {{ with $page.Params }}
+              {{ $customImage = .image }}
+            {{ end }}
+            
+            {{ $finalImage = $customImage | default $imgPath }}
+            
+            {{ if not (fileExists (printf "static%s" $finalImage)) }}
+              {{ $finalImage = "" }}
+            {{ end }}
+          {{ end }}
+
           <div class="product-card group">
             <div class="relative overflow-hidden">
-              {{ $image := .Params.image | default (printf "/images/%s.jpg" $path) }}
-              <img src="{{ $image }}" alt="{{ .Title }}" class="product-image w-full">
+              {{ if $finalImage }}
+                <img src="{{ $finalImage }}" alt="{{ $title }}" class="product-image w-full">
+                {{ else }}
+                  <div class="bg-gray-100 w-full h-64 flex items-center justify-center p-4">
+                    <i class="fas fa-folder text-gray-400 text-5xl"></i>
+                  </div>
+                {{ end }}
               <div class="gradient-overlay bg-gradient-to-t from-{{ $color }}-600 to-{{ 
                 if eq $color "indigo" }}purple
                 {{ else if eq $color "emerald" }}teal
                 {{ else if eq $color "red" }}orange
                 {{ else }}gray{{ end }}-600"></div>
-              <div class="absolute top-6 left-6">
-                <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                  {{ .Title | truncate 12 }}
-                </span>
-              </div>
               <div class="absolute bottom-6 left-6 text-white">
-                <h3 class="text-xl font-bold mb-1">{{ .Title }}</h3>
-                {{ with .Params.price }}
+                <h3 class="text-xl font-bold mb-1">{{ $title }}</h3>
+                {{ with $page.Params.price }}
                   <p class="text-white/90">{{ . }}</p>
                 {{ end }}
               </div>
             </div>
             <div class="p-6 bg-white">
-              <p class="text-gray-600 mb-6">{{ .Description | truncate 120 }}</p>
-              <a href="{{ .RelPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
+              <p class="text-gray-600 mb-6">{{ $description | truncate 120 }}</p>
+              <a href="{{ $relPermalink }}" class="btn-explore w-full text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center group-hover:shadow-lg">
                 View Details
                 <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
               </a>

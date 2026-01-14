@@ -60,10 +60,21 @@
     {{ end }}
   </div>
 
-  <!-- Product Image -->
-  {{ with .Params.image }}
+  <!-- Product Image (auto or custom) -->
+  {{ $imgPath := "" }}
+  {{ with .File }}
+    {{ $relDir := .Dir | strings.TrimSuffix "/" }}
+    {{ $baseName := .BaseFileName }}
+    {{ $imgPath = printf "/images/products/%s/%s.jpg" $relDir $baseName }}
+  {{ end }}
+
+  {{/* 优先使用自定义 image，否则用约定路径 */}}
+  {{ $finalImage := .Params.image | default $imgPath }}
+
+  {{/* 安全检查：仅当图片存在时显示 */}}
+  {{ if fileExists (printf "static%s" $finalImage) }}
     <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-200/50">
-      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto">
+      <img src="{{ $finalImage }}" alt="{{ .Title }}" class="w-full h-auto">
     </div>
   {{ end }}
 
